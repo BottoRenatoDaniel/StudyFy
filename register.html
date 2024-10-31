@@ -18,6 +18,13 @@
                 document.getElementById('container').classList.add('right-panel-active');
             });
 
+			document.querySelector('.forgot-password').addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default link behavior
+                this.classList.add('shake'); // Add shake class
+                setTimeout(() => this.classList.remove('shake'), 500); // Remove class after animation
+            });
+        });
+
             document.getElementById('backButton').addEventListener('click', function() {
                 // Start the fade-out animation
                 this.style.animation = 'fadeOut 0.5s forwards'; // Apply animation
@@ -27,7 +34,6 @@
                     window.location.href = 'index.html'; // Change this to your homepage URL
                 }, 500); // 500ms should match the duration of your animation
             });
-        });
     </script>
     <style>
 		
@@ -36,6 +42,30 @@
 * {
 	box-sizing: border-box;
 }
+
+  /* New Forgot Password Animation */
+  .forgot-password {
+            color: #FF4B2B;
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password:hover {
+            color: #FF416C;
+        }
+
+        /* Shake Animation */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
 
 body {
 	background: #f6f5f7;
@@ -348,7 +378,7 @@ footer a {
             <span>más bejelentkezési lehetőség</span>
             <input type="email" placeholder="Email" required />
             <input type="password" placeholder="Jelszó" required />
-            <a href="#">Elfelejtetted a jelszavad?</a>
+            <a href="#" class="forgot-password">Elfelejtetted a jelszavad?</a>
             <button type="submit">Bejelentkezés</button>
         </form>
     </div>
