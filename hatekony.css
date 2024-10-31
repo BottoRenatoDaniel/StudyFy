@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Kezdő háttérkép szekció */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.5); /* Fekete áttetsző háttér */
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 1em;
+    }
+}
+
+/* Buborék szekciók */
+.bubble-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 60px 20px;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.bubble-section.left {
+    flex-direction: row;
+}
+
+.bubble-section.right {
+    flex-direction: row-reverse;
+}
+
+.bubble-section .text {
+    max-width: 400px;
+    margin: 0 20px;
+    text-align: left;
+}
+
+.bubble-section img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.bubble-section img:hover {
+    transform: scale(1.05); /* Kis nagyítás hover hatásra */
+}
+
+.bubble-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .bubble-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .bubble-section img {
+        margin-bottom: 20px;
+    }
+}
