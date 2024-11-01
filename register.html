@@ -34,6 +34,10 @@
                     window.location.href = 'index.html'; // Change this to your homepage URL
                 }, 500); // 500ms should match the duration of your animation
             });
+			
+			function goToHomepage() {
+        window.location.href = "index.html"; 
+    }
     </script>
     <style>
 		
@@ -392,7 +396,7 @@ footer a {
 </div>
 
 <!-- Back button -->
-<button class="back-button" id="backButton">Vissza</button>
+<button class="back-button" onclick="goToHomepage()" id="backButton">Vissza</button>
 
 <footer>
     <p>
